@@ -1,143 +1,112 @@
-<!-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
-
--->
-
-
 
 @extends('layouts.app')
 
 @section('content')
     
-    <section id="form"><!--form-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-sm-offset-1">
-                    <div class="login-form"><!--login form-->
-                        <h2>Login to your account</h2>
-                        <form action="#">
-                            <input type="text" placeholder="Name" />
-                            <input type="email" placeholder="Email Address" />
-                            <span>
-                                <input type="checkbox" class="checkbox"> 
-                                Keep me signed in
-                            </span>
-                            <button type="submit" class="btn btn-default">Login</button>
-                        </form>
-                    </div><!--/login form-->
+ <section class="main_content_area">
+     <div class="container">
+        <div class="row">
+            <div class="plate_section">
+
+                <div class="col-md-3">
+                  <div class="single_plate row">
+                    <span class="col-md-3 color1">
+                        <img src="{{ asset('images/icon.png')}}" alt="image icon">
+                    </span>
+                    <div class="col-md-9">
+                        <h2>100</h2>
+                        <p>Total Donor</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-sm-1">
-                    <h2 class="or">OR</h2>
+
+                <div class="col-md-3">
+                  <div class="single_plate row">
+                    <span class="col-md-3 color2">
+                        <img src="{{ asset('images/icon.png')}}" alt="image icon">
+                    </span>
+                    <div class="col-md-9">
+                        <h2>50</h2>
+                        <p>Blood Request</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="signup-form"><!--sign up form-->
-                        <h2>New User Signup!</h2>
-                        <form action="#">
-                            <input type="text" placeholder="Name"/>
-                            <input type="email" placeholder="Email Address"/>
-                            <input type="password" placeholder="Password"/>
-                            <button type="submit" class="btn btn-default">Signup</button>
-                        </form>
-                    </div><!--/sign up form-->
+
+                <div class="col-md-3">
+                  <div class="single_plate row">
+                    <span class="col-md-3 color3">
+                        <img src="{{ asset('images/icon.png')}}" alt="image icon">
+                    </span>
+                    <div class="col-md-9">
+                        <h2>40</h2>
+                        <p>Accept Request</p>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </section><!--/form-->
+
+                <div class="col-md-3">
+                  <div class="single_plate row">
+                    <span class="col-md-3 color4">
+                        <img src="{{ asset('images/icon.png')}}" alt="image icon">
+                    </span>
+                    <div class="col-md-9">
+                        <h2>30</h2>
+                        <p>Bag blood in stock</p>
+                    </div>
+                  </div>
+                </div>
+
+            </div> <!-- .plate_section end -->
+        </div> <!-- .row end -->
+
+
+         <div class="row">
+            <div class="main_content">
+                <div class="col-sm-3">
+                    <div class="left_sidebar">
+                        <div class="left_single_sidebar">
+                            <div class="call_us">
+                                <p>You can call us</p>
+                                <h3>01794352889</h3>
+                            </div>
+                        </div>
+                        <div class="left_single_sidebar">
+                            <a href="#">
+                                <img src="{{ asset('images/ads.gif') }}" alt="gif image" width="100%">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-sm-12" style="margin-bottom: 15px">
+                                <img src="{{ asset('images/banner.jpg') }}" alt="banner image" width="100%">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="alert alert-success">
+                                    <h2 class="title">Welcome to your Our Hemoglobin website.</h2>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-3">
+                    <div class="right_sidebar">
+                        <div class="right_single_sidebar">
+                            <div class="fb-page" data-href="https://www.facebook.com/Webmvwit-110336600620125/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Webmvwit-110336600620125/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Webmvwit-110336600620125/">Webmvwit</a></blockquote></div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .main_content end -->
+         </div> <!-- .row end -->
+
+     </div> <!-- .container end -->
+ </section> <!-- .main_content_area end -->
     
 @endsection
