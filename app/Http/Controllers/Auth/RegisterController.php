@@ -58,6 +58,7 @@ class RegisterController extends Controller
             'occupation' => ['required', 'string', 'max:255'],
             'blood' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'date_of_birth' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -79,6 +80,9 @@ class RegisterController extends Controller
             'occupation' => $data['occupation'],
             'blood' => $data['blood'],
             'email' => $data['email'],
+            'date_of_birth' => $data['date_of_birth'],
+            'last_donate_date' => $data['last_donate_date'],
+            'edit_token' => md5(time()),
             'password' => Hash::make($data['password']),
         ]);
     }

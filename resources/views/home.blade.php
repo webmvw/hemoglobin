@@ -15,6 +15,7 @@
                             @else
                             <img src="{{ asset('images/user/'.Auth::user()->avatar) }}" alt="donar profile">
                             @endif
+                            <a href="{{ route('edit',Auth::user()->edit_token) }}" class="btn btn-sm btn-primary" style="margin-left:30px;margin-top:10px;">Edit Profile</a>
                         </div>
                         <div class="col-md-9">
                             <table class="table table-hover">
@@ -41,6 +42,12 @@
                                     <td><p>{{ Auth::user()->phone }}</p></td>
                                     <td><p><b>Email:</b></p></td>
                                     <td><p>{{ Auth::user()->email }}</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p><b>Date of Birth:</b></p></td>
+                                    <td><p>{{ Auth::user()->date_of_birth }}</p></td>
+                                    <td><p><b>Last Donate Date:</b></p></td>
+                                    <td><p>{{ Auth::user()->last_donate_date }}</p></td>
                                 </tr>
                             </table>
                         </div>
