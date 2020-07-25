@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/edit/{edit_token}', 'HomeController@edit')->name('edit');
 Route::post('/update/{edit_token}', 'HomeController@update')->name('update');
+Route::get('/request', 'HomeController@request')->name('request');
+Route::post('/request', 'HomeController@request_store')->name('request_store');

@@ -110,10 +110,11 @@
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="">Blood Request</a></li>
+                                
                                  @if (Route::has('login'))
                                     @auth
                                         <li><a href="{{ url('/home') }}">Profile</a></li>
+                                        <li><a href="{{ route('request') }}">Blood Request</a></li>
                                     @else
                                         <li><a href="{{ route('login') }}">Login</a></li>
 

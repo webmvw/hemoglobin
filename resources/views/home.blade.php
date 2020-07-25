@@ -93,82 +93,42 @@
                     </tbody>
                 </table>
             </div> <!-- .recent_donate_history end -->
+
+            <div class="blood_request_history" style="margin-top:20px;margin-bottom: 30px">
+                <h2 class="title">Blood Request History</h2>
+                <table class="table table-hover display" id="MyTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Blood</th>
+                            <th>Request Date</th>
+                            <th>Bag Quentity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(App\BloodRequest::where('usertoken', Auth::user()->edit_token)->get() as $requestHistory)
+                        <tr>
+                            <td>{{ $requestHistory->name }}</td>
+                            <td>{{ $requestHistory->blood }}</td>
+                            <td>{{ $requestHistory->date }}</td>
+                            <td>{{ $requestHistory->bag_quantity }}</td>
+                            <td>
+                                @if($requestHistory->status == 0)
+                                Panding
+                                @else
+                                Accept
+                                @endif
+                            </td>
+                        </tr>
+                        @endforeach 
+                    </tbody>
+                </table>
+            </div> <!-- .blood_request_history end -->
         </div>
 
-        <div class="col-sm-3">
-            <div class="single_plate row">
-                <span class="col-md-3 color1">
-                    <img src="{{ asset('images/icon.png')}}" alt="image icon">
-                </span>
-                <div class="col-md-9">
-                    <h2>30</h2>
-                    <p>A+ Donor</p>
-                </div>
-            </div>
-            <div class="single_plate row">
-                <span class="col-md-3 color2">
-                    <img src="{{ asset('images/icon.png')}}" alt="image icon">
-                </span>
-                <div class="col-md-9">
-                    <h2>17</h2>
-                    <p>A- Donor</p>
-                </div>
-            </div>
-            <div class="single_plate row">
-                <span class="col-md-3 color3">
-                    <img src="{{ asset('images/icon.png')}}" alt="image icon">
-                </span>
-                <div class="col-md-9">
-                    <h2>30</h2>
-                    <p>B+ Donor</p>
-                </div>
-            </div>
-            <div class="single_plate row">
-                <span class="col-md-3 color4">
-                    <img src="{{ asset('images/icon.png')}}" alt="image icon">
-                </span>
-                <div class="col-md-9">
-                    <h2>20</h2>
-                    <p>B- Donor</p>
-                </div>
-            </div>
-            <div class="single_plate row">
-                <span class="col-md-3 color1">
-                    <img src="{{ asset('images/icon.png')}}" alt="image icon">
-                </span>
-                <div class="col-md-9">
-                    <h2>60</h2>
-                    <p>O+ Donor</p>
-                </div>
-            </div>
-            <div class="single_plate row">
-                <span class="col-md-3 color2">
-                    <img src="{{ asset('images/icon.png')}}" alt="image icon">
-                </span>
-                <div class="col-md-9">
-                    <h2>19</h2>
-                    <p>O- Donor</p>
-                </div>
-            </div>
-            <div class="single_plate row">
-                <span class="col-md-3 color3">
-                    <img src="{{ asset('images/icon.png')}}" alt="image icon">
-                </span>
-                <div class="col-md-9">
-                    <h2>36</h2>
-                    <p>AB+ Donor</p>
-                </div>
-            </div>
-            <div class="single_plate row">
-                <span class="col-md-3 color4">
-                    <img src="{{ asset('images/icon.png')}}" alt="image icon">
-                </span>
-                <div class="col-md-9">
-                    <h2>39</h2>
-                    <p>AB- Donor</p>
-                </div>
-            </div>
-        </div>
+        @include('partials.sidebar_plate')
+        
     </div>
 </div>
 

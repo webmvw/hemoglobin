@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\BloodRequest;
 use File;
 
 class HomeController extends Controller
@@ -27,6 +28,49 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
+    /**
+     * this method return blood request page
+     *
+     */
+    public function request(){
+        return view('request');
+    }
+
+
+    /**
+     * this method store blood request
+     *
+     */
+    public function request_store(Request $request){
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:11'],
+            'blood' => ['required'],
+            'bag_quantity' => ['required'],
+            'date' => ['required'],
+            'division' => ['required', 'string', 'max:255'],
+            'district' => ['required', 'string', 'max:255'],
+            'street_address' => ['required', 'string', 'max:255'],
+        ]);
+
+        $bloodRequest = new BloodRequest;
+        $bloodRequest->name = $request->name;
+        $bloodRequest->phone = $request->phone;
+        $bloodRequest->blood = $request->blood;
+        $bloodRequest->bag_quantity = $request->bag_quantity;
+        $bloodRequest->date = $request->date;
+        $bloodRequest->division = $request->division;
+        $bloodRequest->district = $request->district;
+        $bloodRequest->street_address = $request->street_address;
+        $bloodRequest->usertoken = $request->usertoken;
+
+        $bloodRequest->save();
+        return redirect()->route('home');
+    }
+
+
 
 
     /**
