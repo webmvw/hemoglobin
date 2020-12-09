@@ -19,7 +19,9 @@ class StockController extends Controller
     }
 
     public function index(){
-    	return view('admin.stock.index');
+    	$stocks = Stock::where('status', 0)->orderBy('id', 'desc')->get();
+    	$sells = Stock::where('status', 1)->orderBy('id', 'desc')->get();
+    	return view('admin.stock.index', compact('stocks', 'sells'));
     }
 
     public function store(Request $request){
@@ -35,6 +37,20 @@ class StockController extends Controller
     	$stock->date = $request->date;
     	$stock->save();
     	session()->flash('success', 'Data Stock success!!');
+    	return back();
+    }
+
+    public function sell($id){
+    	$sell = Stock::find($id);
+    	$sell->status = 1;
+    	$sell->sell_date = date("F j, Y");
+    	$sell->save();
+    	return back();
+    }
+
+    public function delete($id){
+    	$delete = Stock::find($id);
+    	$delete->delete();
     	return back();
     }
 }

@@ -92,7 +92,16 @@
                                 </div>
                                 <div class="col-md-3">
                                    <p> Blood:
-                                    <input type="blood" name="blood" class="form-control form-control-sm" required></p>
+                                    <select name="blood" required class="form-control form-control-sm">
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-3">
                                     <p>Date:
@@ -113,29 +122,72 @@
 
         <div class="request_area">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="card mb-3">
                         <div class="card-header">
-                            <h4 class="box-title">Blood Request</h4>
+                            <h4 class="box-title">Stock</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-stats order-table ov-h">
-                                <table class="table ">
+                                <table class="table table-hover" id="MyTable">
                                     <thead>
                                         <tr>
-                                            <th class="serial">#</th>
-                                            <th>Name</th>
+                                            <th class="serial">SL</th>
+                                            <th>Stock Id</th>
                                             <th>Blood</th>
-                                            <th>Quantity</th>
                                             <th>Date</th>
-                                            <th>Phone</th>
-                                            <th>Address</th>
-                                            <th>District</th>
-                                            <th>Division</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php $i = 1; @endphp
+                                        @foreach($stocks as $stock)
+                                        <tr>
+                                            <td>@php echo $i; @endphp</td>
+                                            <td>{{ $stock->stockid }}</td>
+                                            <td>{{ $stock->blood }}</td>
+                                            <td>{{ $stock->date }}</td>
+                                            <td>
+                                                <a href="{{ route('admin.stock.sell', $stock->id) }}" onclick="return confirm('Are your sure to sell!!?')" class="btn btn-success btn-sm">Sell</a>
+                                                <a href="{{ route('admin.stock.delete', $stock->id) }}" onclick="return confirm('Are you sure to delete!!?')" class="btn btn-success btn-sm">Delete</a>
+                                            </td>
+                                        </tr>
+                                        @php $i++; @endphp
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div> <!-- /.table-stats -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h4 class="box-title">Sell</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-stats order-table ov-h">
+                                <table class="table table-hover" id="MyTable2">
+                                    <thead>
+                                        <tr>
+                                            <th class="serial">SL</th>
+                                            <th>Stock Id</th>
+                                            <th>Blood</th>
+                                            <th>Sell Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php $i = 1; @endphp
+                                        @foreach($sells as $sell)
+                                        <tr>
+                                            <td>@php echo $i; @endphp</td>
+                                            <td>{{ $sell->stockid }}</td>
+                                            <td>{{ $sell->blood }}</td>
+                                            <td>{{ $sell->sell_date }}</td>
+                                        </tr>
+                                        @php $i++; @endphp
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div> <!-- /.table-stats -->

@@ -19,7 +19,7 @@ class CreateStocksTable extends Migration
             $table->string('blood');
             $table->date('date');
             $table->integer('status')->default(0);
-            $table->date('sell_date')->nullable();
+            $table->string('sell_date')->nullable();
             $table->timestamps();
         });
     }
