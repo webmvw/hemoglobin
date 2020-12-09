@@ -135,7 +135,7 @@
 
         <div class="request_area">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="box-title">Blood Request</h4>
@@ -146,161 +146,34 @@
                                     <thead>
                                         <tr>
                                             <th class="serial">#</th>
-                                            <th class="avatar">Avatar</th>
                                             <th>Name</th>
                                             <th>Blood</th>
                                             <th>Quantity</th>
+                                            <th>Date</th>
+                                            <th>Phone</th>
+                                            <th>Address</th>
+                                            <th>District</th>
+                                            <th>Division</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php $i = 1; @endphp
+                                        @foreach($unAcceptRequests as $unAcceptRequest)
                                         <tr>
-                                            <td class="serial">1.</td>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/1.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td> <span class="product">O+</span> </td>
-                                            <td><span class="count">2</span></td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Accept</button>
-                                            </td>
+                                            <td>@php echo $i; @endphp</td>
+                                            <td>{{ $unAcceptRequest->name }}</td>
+                                            <td>{{ $unAcceptRequest->blood }}</td>
+                                            <td>{{ $unAcceptRequest->bag_quantity }}</td>
+                                            <td>{{ $unAcceptRequest->date }}</td>
+                                            <td>{{ $unAcceptRequest->phone }}</td>
+                                            <td>{{ $unAcceptRequest->street_address }}</td>
+                                            <td>{{ $unAcceptRequest->district }}</td>
+                                            <td>{{ $unAcceptRequest->division }}</td>
+                                            <td><a href="{{ route('admin.accept', $unAcceptRequest->id) }}" class="btn btn-success btn-sm">Accept</a></td>
                                         </tr>
-                                        <tr>
-                                            <td class="serial">2.</td>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/2.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Gregory Dixon</span> </td>
-                                            <td> <span class="product">AB-</span> </td>
-                                            <td><span class="count">1</span></td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Accept</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">3.</td>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/3.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Catherine Dixon</span> </td>
-                                            <td> <span class="product">B+</span> </td>
-                                            <td><span class="count">2</span></td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Accept</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="serial">4.</td>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/4.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td> <span class="product">A+</span> </td>
-                                            <td><span class="count">2</span></td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Accept</button>
-                                            </td>
-                                        </tr>
-                                        <tr class=" pb-0">
-                                            <td class="serial">5.</td>
-                                            <td class="avatar pb-0">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/6.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Johnny Stephens</span> </td>
-                                            <td> <span class="product">AB+</span> </td>
-                                            <td><span class="count">1</span></td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Accept</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div> <!-- /.table-stats -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="box-title">Unread Massage</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-stats order-table ov-h">
-                                <table class="table ">
-                                    <thead>
-                                        <tr>
-                                            <th class="avatar">Avatar</th>
-                                            <th>Title</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/1.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Louis Stanley</span> </td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Read</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/2.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Gregory Dixon</span> </td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Read</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/3.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Catherine Dixon</span> </td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Read</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/4.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Mary Silva</span> </td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Read</button>
-                                            </td>
-                                        </tr>
-                                        <tr class=" pb-0">
-                                            <td class="avatar pb-0">
-                                                <div class="round-img">
-                                                    <a href="#"><img class="rounded-circle" src="{{ asset('admin/images/avatar/6.jpg') }}" alt="avatar image"></a>
-                                                </div>
-                                            </td>
-                                            <td>  <span class="name">Johnny Stephens</span> </td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Read</button>
-                                            </td>
-                                        </tr>
+                                            @php $i++; @endphp
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div> <!-- /.table-stats -->

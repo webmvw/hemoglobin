@@ -9,6 +9,19 @@ use App\User;
 
 class DonateHistoryController extends Controller
 {
+
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    
 	public function store(Request $request){
 		$request->validate([
             'date' => ['required'],
