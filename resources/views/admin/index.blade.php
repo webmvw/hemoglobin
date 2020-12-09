@@ -111,17 +111,52 @@
                         showInLegend: "true",
                         legendText: "{label}",
                         indexLabelFontSize: 16,
-                        indexLabel: "{label} - {y}%",
+                        indexLabel: "{label} : {y}%",
                         dataPoints: [
-                            { y: 55.20, label: "Total Donor" },
-                            { y: 20, label: "A+" },
-                            { y: 10.37, label: "A-" },
-                            { y: 6.98, label: "B+" },
-                            {y: 10.00, label: "B-"},
-                            { y: 2.60, label: "O+" },
-                            { y: 1.45, label: "O-" },
-                            { y: 0.79, label: "AB+" },
-                            { y: 0.79, label: "AB-" }
+                            @php
+                            $request = App\User::get();
+                            echo "{ y: ".$request->count().", label: 'Total Donor' },";
+                            @endphp
+
+                            @php
+                            $request = App\User::where('blood', 'A+')->get();
+                            echo "{ y: ".$request->count().", label: 'A+' },";
+                            @endphp
+
+                            @php
+                            $request = App\User::where('blood', 'A-')->get();
+                            echo "{ y: ".$request->count().", label: 'A-' },";
+                            @endphp
+                            
+                            @php
+                            $request = App\User::where('blood', 'B+')->get();
+                            echo "{ y: ".$request->count().", label: 'B+' },";
+                            @endphp
+
+                            @php
+                            $request = App\User::where('blood', 'B-')->get();
+                            echo "{ y: ".$request->count().", label: 'B-' },";
+                            @endphp
+
+                            @php
+                            $request = App\User::where('blood', 'O+')->get();
+                            echo "{ y: ".$request->count().", label: 'O+' },";
+                            @endphp
+
+                            @php
+                            $request = App\User::where('blood', 'O-')->get();
+                            echo "{ y: ".$request->count().", label: 'O-' },";
+                            @endphp
+
+                            @php
+                            $request = App\User::where('blood', 'AB+')->get();
+                            echo "{ y: ".$request->count().", label: 'AB+' },";
+                            @endphp
+
+                            @php
+                            $request = App\User::where('blood', 'AB-')->get();
+                            echo "{ y: ".$request->count().", label: 'AB-' }";
+                            @endphp
                         ]
                     }]
                 };
