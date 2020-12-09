@@ -8,18 +8,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <img src="images/icon.png" alt="blood icon">
                             </div>
-                            <div class="col-md-6">
-                                <div class="text-left">
+                            <div class="col-md-8">
+                                <div class="text-center">
                                     <h3>
                                         @php
-                                        $donor = App\User::get();
-                                        echo $donor->count();
+                                        $stock = App\Stock::get();
+                                        echo $stock->count();
                                         @endphp
                                     </h3>
-                                    <p>Donor</p>
+                                    <p>Total Blood Stock</p>
                                 </div>
                             </div>
                         </div>
@@ -30,18 +30,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <img src="images/icon.png" alt="blood icon">
                             </div>
-                            <div class="col-md-6">
-                                <div class="text-left">
+                            <div class="col-md-8">
+                                <div class="text-center">
                                     <h3>
                                         @php
-                                        $donor = App\DonateHistory::get();
-                                        echo $donor->count();
+                                        $available = App\Stock::where('status', 0)->get();
+                                        echo $available->count();
                                         @endphp
                                     </h3>
-                                    <p>Donate</p>
+                                    <p>Available Stock</p>
                                 </div>
                             </div>
                         </div>
@@ -52,18 +52,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <img src="images/icon.png" alt="blood icon">
                             </div>
-                            <div class="col-md-6">
-                                <div class="text-left">
+                            <div class="col-md-8">
+                                <div class="text-center">
                                     <h3>
                                         @php
-                                        $request = App\BloodRequest::get();
-                                        echo $request->count();
+                                        $sell = App\Stock::where('status', 1)->get();
+                                        echo $sell->count();
                                         @endphp
                                     </h3>
-                                    <p>Request</p>
+                                    <p>Total Sell</p>
                                 </div>
                             </div>
                         </div>
