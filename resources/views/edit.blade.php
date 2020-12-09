@@ -8,7 +8,12 @@
     <div class="row">
         <div class="col-sm-9">
             <div class="signup-form" style="margin-bottom: 30px"><!--sign up form-->
-                <h2>Update your information</h2>
+                <div class="user_card">
+                    <div class="user_card_header">
+                        <h4 class="user_card_title">Update your information</h4>
+                    </div>
+                    <div class="user_card_body"> 
+
                 <form method="POST" action="{{ route('update', $user->edit_token) }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
@@ -138,6 +143,8 @@
 
                     <button type="submit" class="btn btn-default">Update</button>
                 </form>
+                    </div>
+                </div>
             </div><!--/sign up form-->
         </div>
 

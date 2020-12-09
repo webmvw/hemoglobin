@@ -8,8 +8,12 @@
     <div class="row">
         <div class="col-sm-9">
             <div class="signup-form" style="margin-bottom: 30px"><!--sign up form-->
-                <h2>Request for blood</h2>
-                @include('partials.messages')
+                <div class="user_card">
+                    <div class="user_card_header">
+                        <h4 class="user_card_title">Request for blood</h4>
+                    </div>
+                    <div class="user_card_body">
+                        @include('partials.messages')
 
                 @if (Route::has('login'))
                      @auth
@@ -128,6 +132,8 @@
                 </form>
                     @endauth
                 @endif
+                    </div>
+                </div>
             </div><!--/sign up form-->
         </div>
 

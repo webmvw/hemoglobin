@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\BloodRequest;
+use App\Review;
 use File;
 
 class HomeController extends Controller
@@ -28,6 +29,32 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
+
+    /**
+     * this method return review page
+     *
+     */
+    public function review(){
+        return view('review');
+    }
+    public function review_store(Request $request){
+        $request->validate([
+            'review' => ['required', 'string', 'max:255'],
+        ]);
+
+        $review = new Review;
+        $review->avatar = $request->avatar;
+        $review->username = $request->user;
+        $review->review = $request->review;
+        $review->save();
+        session()->flash('success', 'Review successfully!! We got it. Thanks.');
+        return redirect()->route('review');
+    }
+
+
+
 
 
     /**

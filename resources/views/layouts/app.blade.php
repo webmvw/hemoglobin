@@ -36,8 +36,8 @@
                     <div class="col-sm-6">
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
-                                <li><a href=""><i class="fa fa-phone"></i> 01794352889</a></li>
-                                <li><a href=""><i class="fa fa-envelope"></i> masudrana.bbpi@gmail.com</a></li>
+                                <li><i class="fa fa-phone"></i> 01794352889</li>
+                                <li><i class="fa fa-envelope"></i> masudrana.bbpi@gmail.com</li>
                             </ul>
                         </div>
                     </div>
@@ -98,23 +98,16 @@
         <div class="header-bottom"><!--header-bottom-->
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-9">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
+                    <div class="col-sm-12">
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="{{ url('/') }}">Home</a></li>
                                 
-                                 @if (Route::has('login'))
+                                @if (Route::has('login'))
                                     @auth
                                         <li><a href="{{ url('/home') }}">Profile</a></li>
                                         <li><a href="{{ route('request') }}">Blood Request</a></li>
+                                        <li><a href="{{ route('review') }}">Review</a></li>
                                     @else
                                         <li><a href="{{ route('login') }}">Login</a></li>
 
@@ -123,17 +116,14 @@
                                         @endif
                                     @endauth
                                 @endif
+
+                                <li><a href="">Our Management</a></li>
+                                <li><a href="">Blog</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="search_box pull-right">
-                            <input type="text" placeholder="Search"/>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div><!--/header-bottom-->
+            </div        </div><!--/header-bottom-->
     </header><!--/header-->
     
 
@@ -168,6 +158,7 @@
 
         $(document).ready(function() {
             $('#MyTable').DataTable();
+            $('#MyTable2').DataTable();
         } );
     </script>    
 </body>

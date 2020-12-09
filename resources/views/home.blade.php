@@ -5,6 +5,12 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
+
+    <div class="user_card">
+        <div class="user_card_header">
+            <h4 class="user_card_title">User Information.</h4>
+        </div>
+        <div class="user_card_body">
             <div class="profile">
                 @if (Route::has('login'))
                      @auth
@@ -56,8 +62,11 @@
                 @endif
             </div> <!-- .profile end -->
 
-            <div class="recent_donate_history">
-                <h2 class="title">Donate History</h2>
+            <div class="user_card">
+                <div class="user_card_header">
+                    <h4 class="user_card_title">Donate History</h4>
+                </div>
+                <div class="user_card_body">
                 <table class="table table-hover display" id="MyTable">
                     <thead>
                         <tr>
@@ -69,34 +78,29 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php $i = 1; @endphp
+                         @foreach(App\DonateHistory::where('donorID', Auth::user()->id)->orderBy('id', 'desc')->get() as $donateHistory)
                         <tr>
-                            <td>1</td>
-                            <td>Md. Masud Rana</td>
-                            <td>O+</td>
-                            <td>12/08/2020</td>
-                            <td>2</td>
+                            <td>@php echo $i; @endphp</td>
+                            <td>{{ $donateHistory->name }}</td>
+                            <td>{{ $donateHistory->blood }}</td>
+                            <td>{{ $donateHistory->donate_date }}</td>
+                            <td>{{ $donateHistory->bag_quantity }}</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Md. Sakib Babu</td>
-                            <td>O+</td>
-                            <td>12/08/2020</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Md. Sumon Mia</td>
-                            <td>O+</td>
-                            <td>12/08/2020</td>
-                            <td>1</td>
-                        </tr>       
+                        @php $i++; @endphp
+                        @endforeach       
                     </tbody>
                 </table>
-            </div> <!-- .recent_donate_history end -->
+                </div>
+            </div> <!-- donate_history end -->
 
-            <div class="blood_request_history" style="margin-top:20px;margin-bottom: 30px">
-                <h2 class="title">Blood Request History</h2>
-                <table class="table table-hover display" id="MyTable">
+
+            <div class="user_card">
+                <div class="user_card_header">
+                    <h4 class="user_card_title">Blood Request History</h4>
+                </div>
+                <div class="user_card_body">
+                <table class="table table-hover display" id="MyTable2">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -107,7 +111,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach(App\BloodRequest::where('usertoken', Auth::user()->edit_token)->get() as $requestHistory)
+                        @foreach(App\BloodRequest::where('usertoken', Auth::user()->edit_token)->orderBy('id', 'desc')->get() as $requestHistory)
                         <tr>
                             <td>{{ $requestHistory->name }}</td>
                             <td>{{ $requestHistory->blood }}</td>
@@ -124,7 +128,10 @@
                         @endforeach 
                     </tbody>
                 </table>
-            </div> <!-- .blood_request_history end -->
+                </div>
+            </div> <!-- blood_request_history end -->
+        </div>    
+    </div>        
         </div>
 
         @include('partials.sidebar_plate')

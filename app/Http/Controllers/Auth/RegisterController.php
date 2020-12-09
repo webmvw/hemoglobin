@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'date_of_birth' => $data['date_of_birth'],
             'last_donate_date' => $data['last_donate_date'],
-            'edit_token' => md5(time()),
+            'edit_token' => md5(time().$data['phone']),
             'password' => Hash::make($data['password']),
         ]);
     }
