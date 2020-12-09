@@ -35,8 +35,13 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="text-left">
-                                    <h3>50</h3>
-                                    <p>Blood Stock</p>
+                                    <h3>
+                                        @php
+                                        $donor = App\DonateHistory::get();
+                                        echo $donor->count();
+                                        @endphp
+                                    </h3>
+                                    <p>Donate</p>
                                 </div>
                             </div>
                         </div>

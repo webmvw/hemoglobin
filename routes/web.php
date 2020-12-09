@@ -54,5 +54,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'namespace
 	Route::get('/review', 'ReviewController@index')->name('admin.review');
 	Route::get('/review/accept/{id}', 'ReviewController@accept')->name('admin.review.accept');
 	Route::get('/review/delete/{id}', 'ReviewController@delete')->name('admin.review.delete');
+
+	// Stock Routes
+	Route::get('/stock', 'StockController@index')->name('admin.stock');
+	Route::post('/stock', 'StockController@store')->name('admin.stock.store');
 	
 });

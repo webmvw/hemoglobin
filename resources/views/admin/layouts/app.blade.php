@@ -73,7 +73,7 @@
             <li><a href="{{ route('admin.request') }}"><i class="fa fa-bell"></i> Request</a></li>
             <li><a href=""><i class="fa fa-puzzle-piece"></i> Noties</a></li>
             <li><a href=""><i class="fa fa-th"></i> Blog</a></li>
-            <li><a href=""><i class="fa fa-fire"></i> Stock</a></li>
+            <li><a href="{{ route('admin.stock') }}"><i class="fa fa-fire"></i> Stock</a></li>
             <li><a href="{{ route('admin.review') }}"><i class="fa fa-bars"></i> Review</a></li>
             <li><a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
