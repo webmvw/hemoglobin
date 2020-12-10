@@ -2,7 +2,81 @@
 
 @section('content')
 
+<!-- Widgets  -->
+        <div class="row mb-3">
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/icon.png" alt="blood icon">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="text-center">
+                                    <h3>
+                                        @php
+                                        $Request = App\BloodRequest::get();
+                                        echo $Request->count();
+                                        @endphp
+                                    </h3>
+                                    <p>Total Blood Request</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/icon.png" alt="blood icon">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="text-center">
+                                    <h3>
+                                        @php
+                                        $Unapproved = App\BloodRequest::where('status', 0)->get();
+                                        echo $Unapproved->count();
+                                        @endphp
+                                    </h3>
+                                    <p>Unapproved Request</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/icon.png" alt="blood icon">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="text-center">
+                                    <h3>
+                                        @php
+                                        $approved = App\BloodRequest::where('status', 1)->get();
+                                        echo $approved->count();
+                                        @endphp
+                                    </h3>
+                                    <p>Approved Request</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Widgets -->
 
+
+
+
+<!-- Request Area -->
 <div class="request_area">
     <div class="row">
         <div class="col-md-12">
