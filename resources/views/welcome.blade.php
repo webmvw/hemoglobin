@@ -197,7 +197,27 @@
                                 <h4 class="user_card_title">Latest Review</h4>
                             </div>
                             <div class="user_card_body">
-                                
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        @foreach($reviews->chunk(3) as $review)
+                                      <div class="item {{ $loop->first ? 'active' : '' }}">
+                                         <div class="row">
+                                            @foreach($review as $item)
+                                             <div class="col-md-4">
+                                                 <div class="review">
+                                                     <img src="{{ asset('images/user/'.$item->avatar) }}" alt="gellery photo">
+                                                     <h2>{{ $item->username }}</h2>
+                                                     <p>{{ $item->review }}</p>
+                                                 </div>
+                                             </div>
+                                             @endforeach
+                                         </div>
+                                      </div>
+                                      @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>      
                             

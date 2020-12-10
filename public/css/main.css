@@ -70,6 +70,27 @@ h1, h2, h3, h4, h5, h6 {
 }   
 
 
+/* ======================================================
+    review css
+   ====================================================== */
+.review{
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 10px;
+  min-height: 370px;
+}
+.review img{
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  border:1px solid red;
+}
+.review h2{
+  font-size: 22px;
+}
+.review p{
+  font-size: 14px;
+}
 
 
 
