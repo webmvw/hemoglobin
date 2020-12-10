@@ -14,7 +14,12 @@
                         <img src="{{ asset('images/icon.png')}}" alt="image icon">
                     </span>
                     <div class="col-md-9">
-                        <h2>100</h2>
+                        <h2>
+                            @php
+                            $donor = App\User::get();
+                            echo $donor->count();
+                            @endphp
+                        </h2>
                         <p>Total Donor</p>
                     </div>
                   </div>
@@ -26,7 +31,12 @@
                         <img src="{{ asset('images/icon.png')}}" alt="image icon">
                     </span>
                     <div class="col-md-9">
-                        <h2>50</h2>
+                        <h2>
+                            @php
+                            $request = App\BloodRequest::get();
+                            echo $request->count();
+                            @endphp
+                        </h2>
                         <p>Blood Request</p>
                     </div>
                   </div>
@@ -38,7 +48,12 @@
                         <img src="{{ asset('images/icon.png')}}" alt="image icon">
                     </span>
                     <div class="col-md-9">
-                        <h2>40</h2>
+                        <h2>
+                            @php
+                            $request = App\BloodRequest::where('status', 1)->get();
+                            echo $request->count();
+                            @endphp
+                        </h2>
                         <p>Accept Request</p>
                     </div>
                   </div>
@@ -50,7 +65,12 @@
                         <img src="{{ asset('images/icon.png')}}" alt="image icon">
                     </span>
                     <div class="col-md-9">
-                        <h2>30</h2>
+                        <h2>
+                            @php
+                            $request = App\Stock::where('status', 0)->get();
+                            echo $request->count();
+                            @endphp
+                        </h2>
                         <p>Bag blood in stock</p>
                     </div>
                   </div>
