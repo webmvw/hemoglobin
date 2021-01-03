@@ -124,8 +124,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card mb-3">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between">
                             <h4 class="box-title">Stock</h4>
+                            <a href="{{ route('stockPdf') }}"  target="_blank" class="btn btn-sm btn-info"><i class="fa fa-print"></i> Print</a>
                         </div>
                         <div class="card-body">
                             <div class="table-stats order-table ov-h">
@@ -163,8 +164,9 @@
 
                 <div class="col-md-6">
                     <div class="card mb-3">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between">
                             <h4 class="box-title">Sell</h4>
+                            <a href="{{ route('sellPdf') }}" target="_blank" class="btn btn-sm btn-info"><i class="fa fa-print"></i> Print</a>
                         </div>
                         <div class="card-body">
                             <div class="table-stats order-table ov-h">

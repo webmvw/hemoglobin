@@ -59,7 +59,7 @@ class DonorController extends Controller
 
         $table .= "<div style='width:100%;height:2px;background:green'></div>";
 
-        $table .= "<table border='1' style='border-collapse:collapse;width:100%' cellpadding='5px'><thead><tr><th>SL</th><th>Name</th><th>Blood</th><th>Phone</th><th>Address</th><th>District</th><th>Last Donate</th></tr></thead><tbody>";
+        $table .= "<style type='text/css'>tr:nth-child(odd){background:#dddfe2}</style><table border='1' style='border-collapse:collapse;width:100%' cellpadding='5px'><thead><tr style='background:#f4f4f4'><th>SL</th><th>Name</th><th>Blood</th><th>Phone</th><th>Address</th><th>District</th><th>Last Donate</th></tr></thead><tbody>";
             $i = 1;
             foreach ($donors as $donor) {
                 $table .= "<tr>";

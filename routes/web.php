@@ -61,5 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'namespace
 	Route::post('/stock', 'StockController@store')->name('admin.stock.store');
 	Route::get('/stock/sell/{id}', 'StockController@sell')->name('admin.stock.sell');
 	Route::get('/stock/delete/{id}', 'StockController@delete')->name('admin.stock.delete');
+	Route::get('/stock/pdf', 'StockController@stockPdf')->name('stockPdf');
+	Route::get('/sell/pdf', 'StockController@sellPdf')->name('sellPdf');
 	
 });
