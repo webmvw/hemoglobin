@@ -118,7 +118,7 @@
                                 @endif
 
                                 <li><a href="">Our Management</a></li>
-                                <li><a href="">Blog</a></li>
+                                <li><a href="">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>

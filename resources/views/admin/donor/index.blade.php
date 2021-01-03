@@ -7,8 +7,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between">
                     <h4 class="box-title">All Donor Information</h4>
+                    <a href="{{ route('admin.pdf') }}" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-print"></i> Print all donor</a>
                 </div>
                 <div class="card-body">
                     <div class="table-stats order-table ov-h">
@@ -58,7 +59,6 @@
                     </div> <!-- /.table-stats -->
                 </div>
                 <div class="card-footer">
-                    
                 </div>
             </div>
         </div>

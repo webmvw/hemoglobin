@@ -39,6 +39,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'namespace
 	//donor routes
 	Route::get('/donor', 'DonorController@index')->name('admin.donor');
 	Route::get('/donor/details/{edit_token}', 'DonorController@details')->name('admin.donor.details');
+	Route::get('/donor/pdf', 'DonorController@pdf')->name('admin.pdf');
+	Route::get('/donor/details/pdf/{edit_token}', 'DonorController@detailsPdf')->name('admin.donor.details.pdf');
+	
 
 	//blood request routes
 	Route::get('/request', 'RequestController@index')->name('admin.request');

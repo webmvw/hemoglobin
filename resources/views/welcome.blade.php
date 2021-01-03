@@ -174,43 +174,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="user_card">
-                            <div class="user_card_header">
-                                <h4 class="user_card_title">Latest Blog</h4>
-                            </div>
-                            <div class="user_card_body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="single_blog">
-                                            <img src="{{ asset('images/gellery/gellery3.jpg') }}" alt="blog image">
-                                            <h2>There are many variations of passagesBlog Title</h2>
-                                            <span>Author: Jon Donga | Date: 12/12/2020</span>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                                            <a href="" class="btn btn-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_blog">
-                                            <img src="{{ asset('images/gellery/gellery3.jpg') }}" alt="blog image">
-                                            <h2>There are many variations of passagesBlog Title</h2>
-                                            <span>Author: Jon Donga | Date: 12/12/2020</span>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                                            <a href="" class="btn btn-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_blog">
-                                            <img src="{{ asset('images/gellery/gellery3.jpg') }}" alt="blog image">
-                                            <h2>There are many variations of passagesBlog Title</h2>
-                                            <span>Author: Jon Donga | Date: 12/12/2020</span>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                                            <a href="" class="btn btn-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>        
-                        </div>  
+  
 
                         <div class="user_card">
                             <div class="user_card_header">

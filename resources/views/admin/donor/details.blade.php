@@ -7,8 +7,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between">
                     <h4 class="box-title">Donor: {{ $donor->name }} all information.</h4>
+                    <a href="{{ route('admin.donor.details.pdf', $donor->edit_token) }}" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-print"></i> Print</a>
                 </div>
                 <div class="card-body">
 
@@ -198,7 +199,6 @@
                 </div>
 
                 <div class="card-footer">
-                    <a href="" class="btn btn-success btn-sm">Print</a>
                 </div>
             </div>
         </div>
